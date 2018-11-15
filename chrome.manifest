@@ -1,0 +1,8 @@
+skin		borderColorsGT	default	chrome/skin/
+content     borderColorsGT		chrome/content/
+locale		borderColorsGT		en-US	chrome/locale/en-US/
+locale		borderColorsGT		it-IT	chrome/locale/it-IT/
+locale		borderColorsGT		es-ES	chrome/locale/es-ES/
+
+
+overlay chrome://messenger/content/messengercompose/messengercompose.xul	chrome://borderColorsGT/content/bordercolorsgt.xul
