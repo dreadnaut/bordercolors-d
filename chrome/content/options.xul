@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 
 <!DOCTYPE dialog SYSTEM "chrome://borderColorsGT/locale/borderColorsGTLocale.dtd">
 
@@ -6,36 +6,36 @@
 <?xml-stylesheet href="chrome://messenger/skin/prefPanels.css" type="text/css"?>
 
 <dialog xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
-	onload="init();"
-	buttons="accept, cancel"
-	ondialogaccept="accept();"
-	persist="screenX screenY"
-	title="&optionPanel.title;"
-	id="Preference panel"
-	style="width:30em;">
+  onload="init();"
+  buttons="accept, cancel"
+  ondialogaccept="accept();"
+  persist="screenX screenY"
+  title="&optionPanel.title;"
+  id="Preference panel"
+  style="width:30em;">
 
-	<groupbox id="colorSelectors" flex="1">
-		<caption label="&optionPanel.colorSelectors;"/>
-	</groupbox>
-	<groupbox>
-		<caption label="&optionPanel.otherOptions;"/>
-		<hbox>
-			<label control="BorderWidth" value="&optionPanel.borderWidth;"/>
-			<menulist id="BorderWidth"  rows="1" align="right">
-				<menupopup>
-					<menuitem label="1px" value="1"/>
-					<menuitem label="2px" value="2"/>
-					<menuitem label="3px" value="3"/>
-					<menuitem label="4px" value="4"/>
-					<menuitem label="5px" value="5"/>
-					<menuitem label="6px" value="6"/>
-					<menuitem label="7px" value="7"/>
-					<menuitem label="8px" value="8"/>
-					<menuitem label="9px" value="9"/>
-					<menuitem label="10px" value="10"/>
-				</menupopup>
-			</menulist>
-		</hbox>
-	</groupbox>
-	<script type="application/javascript" src="chrome://borderColorsGT/content/options.js"/>
+  <groupbox id="colorSelectors" flex="1">
+    <caption label="&optionPanel.colorSelectors;"/>
+  </groupbox>
+  <groupbox>
+    <caption label="&optionPanel.otherOptions;"/>
+    <hbox>
+      <label control="BorderWidth" value="&optionPanel.borderWidth;"/>
+      <menulist id="BorderWidth"  rows="1" align="right">
+        <menupopup>
+          <menuitem label="1px" value="1"/>
+          <menuitem label="2px" value="2"/>
+          <menuitem label="3px" value="3"/>
+          <menuitem label="4px" value="4"/>
+          <menuitem label="5px" value="5"/>
+          <menuitem label="6px" value="6"/>
+          <menuitem label="7px" value="7"/>
+          <menuitem label="8px" value="8"/>
+          <menuitem label="9px" value="9"/>
+          <menuitem label="10px" value="10"/>
+        </menupopup>
+      </menulist>
+    </hbox>
+  </groupbox>
+  <script type="application/javascript" src="chrome://borderColorsGT/content/options.js"/>
 </dialog>
