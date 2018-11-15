@@ -12,9 +12,10 @@
   persist="screenX screenY"
   title="&optionPanel.title;"
   id="Preference panel"
-  style="width:30em;">
+  resizable="resizable"
+  style="min-width: 30em; max-height: 40em;">
 
-  <groupbox id="colorSelectors" flex="1">
+  <groupbox id="colorSelectors" flex="1" style="overflow-x: hidden; overflow-y: auto">
     <caption label="&optionPanel.colorSelectors;"/>
   </groupbox>
   <groupbox>

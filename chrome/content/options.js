@@ -18,6 +18,7 @@ function init() {
             var newSeparator = document.createElement("separator");
             var newColorPicker = document.createElement("colorpicker");
             newLabel.setAttribute("value", nextIdentity.identityName);
+            newHbox.setAttribute("align", "center");
             newHbox.setAttribute("id", nextIdentity.identityName);
             newSeparator.setAttribute("orient", "vertical");
             var container = document.getElementById('colorSelectors');
