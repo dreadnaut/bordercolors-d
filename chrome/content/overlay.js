@@ -6,24 +6,19 @@ var accountSelector = document.getElementById("msgIdentity");
 accountSelector.setAttribute("oncommand", "colorBorder();");
 
 function colorBorder() {
+    const prefs = new BorderColorsPrefs();
+
     LoadIdentity(false);
     //Retrieve the panel
     var writingPanel = document.getElementById("headers-box").parentNode;
     //Apply the border
-    var properties = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
-    var myProperties = properties.getBranch("extensions.borderColorsGT.");
     var selectedIdentity = accountSelector.label;
-    var identityProperty = myProperties.getChildList("colors." + selectedIdentity);
-    var borderWidth = myProperties.getChildList("borderWidth");
-    var BWidth;
-    if (borderWidth.length == 0) {
-        BWidth = 1;
+
+    var BWidth = prefs.getInt("borderWidth", 1);
+
+    if (prefs.hasColor(selectedIdentity)) {
+        writingPanel.setAttribute("style", "border: " + BWidth + "px solid  " + prefs.getColor(selectedIdentity));
     } else {
-        BWidth = myProperties.getCharPref("borderWidth");
-    }
-    if (identityProperty.length == 0) {
         writingPanel.setAttribute("style", "border: " + BWidth + "px dashed gray");
-    } else {
-        writingPanel.setAttribute("style", "border: " + BWidth + "px solid  " + myProperties.getCharPref("colors." + selectedIdentity));
     }
 }

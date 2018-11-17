@@ -1,6 +1,6 @@
 function init() {
-    var properties = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
-    var myProperties = properties.getBranch("extensions.borderColorsGT.");
+    const prefs = new BorderColorsPrefs();
+
     var accountManager = Components.classes["@mozilla.org/messenger/account-manager;1"].getService(Components.interfaces.nsIMsgAccountManager);
     var accountsList = accountManager.accounts;
     for (var i = 0; i < accountsList.length; i++) {
@@ -8,10 +8,6 @@ function init() {
         var identitiesList = nextAccount.identities;
         for (var j = 0; j < identitiesList.length; j++) {
             var nextIdentity = identitiesList.queryElementAt(j, Components.interfaces.nsIMsgIdentity);
-            var identityProperty = myProperties.getChildList("colors." + nextIdentity.identityName);
-            if (identityProperty.length === 0) {
-                myProperties.setCharPref("colors." + nextIdentity.identityName, "#FFFFFF");
-            }
             var newHbox = document.createElement("hbox");
             var newLabel = document.createElement("label");
             var newSeparator = document.createElement("separator");
@@ -22,31 +18,27 @@ function init() {
             newSeparator.setAttribute("orient", "vertical");
             var container = document.getElementById('colorSelectors');
             newColorPicker.setAttribute("type", "button");
-            newColorPicker.setAttribute("color", myProperties.getCharPref("colors." + nextIdentity.identityName));
+            newColorPicker.setAttribute("color", prefs.getColor(nextIdentity.identityName));
             newHbox.appendChild(newColorPicker);
             newHbox.appendChild(newSeparator);
             newHbox.appendChild(newLabel);
             container.appendChild(newHbox);
         }
     }
-    var borderWidth = myProperties.getChildList("borderWidth");
-    size = document.getElementById('BorderWidth');
-    if (borderWidth.length === 0) {
-        size.selectedIndex = 0;
-    } else {
-        size.selectedIndex = myProperties.getCharPref("borderWidth") - 1;
-    }
+
+    const sizeSelector = document.getElementById('BorderWidth');
+    sizeSelector.selectedIndex = prefs.getInt("borderWidth", 1) - 1;
 }
 
 function accept() {
-    var properties = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
-    var myProperties = properties.getBranch("extensions.borderColorsGT.");
+    const prefs = new BorderColorsPrefs();
+
     var colorList = document.getElementById("colorSelectors").getElementsByTagName("hbox");
     for (i = 0; i < colorList.length; i++) {
         var accountId = colorList.item(i).getAttribute("id");
         var color = colorList.item(i).getElementsByTagName("colorpicker").item(0).getAttribute("color");
-        myProperties.setCharPref("colors." + accountId, color.toString());
+        prefs.setColor(accountId, color.toString());
     }
     var borderWidth = document.getElementById("BorderWidth").getAttribute("value");
-    myProperties.setCharPref("borderWidth", borderWidth);
+    prefs.setInt("borderWidth", borderWidth);
 }

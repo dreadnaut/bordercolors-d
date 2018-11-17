@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 
 <overlay id="bordercolorsgtoverlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  <script type="application/javascript" src="chrome://borderColorsGT/content/BorderColorsPrefs.js"/>
   <script type="application/javascript" src="chrome://borderColorsGT/content/overlay.js"/>
 </overlay>

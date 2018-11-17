@@ -38,5 +38,6 @@
       </menulist>
     </hbox>
   </groupbox>
+  <script type="application/javascript" src="chrome://borderColorsGT/content/BorderColorsPrefs.js"/>
   <script type="application/javascript" src="chrome://borderColorsGT/content/options.js"/>
 </dialog>
