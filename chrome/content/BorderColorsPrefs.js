@@ -4,7 +4,7 @@ class BorderColorsPrefs {
         this.prefs = Components
             .classes["@mozilla.org/preferences-service;1"]
             .getService(Components.interfaces.nsIPrefService)
-            .getBranch("extensions.borderColorsGT.");
+            .getBranch("extensions.borderColors-D.");
     }
 
     setInt(key, value) {

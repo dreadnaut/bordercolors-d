@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<!DOCTYPE dialog SYSTEM "chrome://borderColorsGT/locale/borderColorsGTLocale.dtd">
+<!DOCTYPE dialog SYSTEM "chrome://borderColors-D/locale/options.dtd">
 
 <?xml-stylesheet href="chrome://communicator/skin/" type="text/css"?>
 <?xml-stylesheet href="chrome://messenger/skin/prefPanels.css" type="text/css"?>
@@ -38,6 +38,6 @@
       </menulist>
     </hbox>
   </groupbox>
-  <script type="application/javascript" src="chrome://borderColorsGT/content/BorderColorsPrefs.js"/>
-  <script type="application/javascript" src="chrome://borderColorsGT/content/options.js"/>
+  <script type="application/javascript" src="chrome://borderColors-D/content/BorderColorsPrefs.js"/>
+  <script type="application/javascript" src="chrome://borderColors-D/content/options.js"/>
 </dialog>

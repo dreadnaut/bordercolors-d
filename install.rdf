@@ -3,16 +3,21 @@
 
   <Description about="urn:mozilla:install-manifest">
 
-    <em:id>bordercolorsgt@addonsdev.mozilla.org</em:id>
-    <em:version>1.0.8</em:version>
-    <em:creator>Giuseppe Tino</em:creator>
-    <em:name>BorderColors GT</em:name>
+    <em:name>BorderColors D</em:name>
     <em:description>
-      Allows to assign a color to the compose message window border for each identity.
+      Shows a colorful border around the "New Message" window, so you can tell different identities apart.
     </em:description>
+    <em:version>1.0.9</em:version>
+
+    <em:creator>dreadnaut</em:creator>
+    <em:contributor>Giuseppe Tino</em:contributor>
+    <em:contributor>Mike Krieger</em:contributor>
+    <em:homepageURL>https://github.com/dreadnaut/bordercolors-d</em:homepageURL>
+
+    <em:id>bordercolors-d@addonsdev.mozilla.org</em:id>
     <em:type>2</em:type>
-    <em:iconURL>chrome://borderColorsGT/skin/iconSmall.png</em:iconURL>
-    <em:optionsURL>chrome://borderColorsGT/content/options.xul</em:optionsURL>
+    <em:iconURL>chrome://borderColors-D/skin/iconSmall.png</em:iconURL>
+    <em:optionsURL>chrome://borderColors-D/content/options.xul</em:optionsURL>
 
     <em:targetApplication>
       <Description>
@@ -25,7 +30,7 @@
     <em:localized>
       <Description>
         <em:locale>it-IT</em:locale>
-        <em:name>BorderColors GT</em:name>
+        <em:name>BorderColors D</em:name>
         <em:description>
           Consente di assegnare un colore al bordo della finestra di composizione dei messaggi per ogni identità.
         </em:description>
@@ -35,7 +40,7 @@
     <em:localized>
       <Description>
         <em:locale>es-ES</em:locale>
-        <em:name>BorderColors GT</em:name>
+        <em:name>BorderColors D</em:name>
         <em:description>
           Permite de asignar un color al borde de la ventana de escritura para cada cuenta de correo electrónico.
         </em:description>
