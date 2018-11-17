@@ -1,24 +1,27 @@
-window.addEventListener("compose-window-init", function() {
-    colorBorder();
-}, true);
+const borderColorsPrefs = new BorderColorsPrefs();
 
-var accountSelector = document.getElementById("msgIdentity");
-accountSelector.setAttribute("oncommand", "colorBorder();");
+// apply border when the composer window first opens
+window.addEventListener("compose-window-init", colorBorder, true);
+
+// apply border when the user switches identity
+document.getElementById("msgIdentity").addEventListener("command", colorBorder);
+
 
 function colorBorder() {
-    const prefs = new BorderColorsPrefs();
+    applyIdentityBorder(
+        document.getElementById("msgIdentity").label
+    );
+}
 
-    LoadIdentity(false);
-    //Retrieve the panel
+function applyIdentityBorder(identity) {
+    const isDefined = borderColorsPrefs.hasColor(identity);
+
+    // Prepare border attributes
+    const color = isDefined ? borderColorsPrefs.getColor(identity) : "gray";
+    const style = isDefined ? "solid" : "dashed";
+    const width = borderColorsPrefs.getInt("borderWidth", 1) + "px";
+
+    // Apply the border
     var writingPanel = document.getElementById("headers-box").parentNode;
-    //Apply the border
-    var selectedIdentity = accountSelector.label;
-
-    var BWidth = prefs.getInt("borderWidth", 1);
-
-    if (prefs.hasColor(selectedIdentity)) {
-        writingPanel.setAttribute("style", "border: " + BWidth + "px solid  " + prefs.getColor(selectedIdentity));
-    } else {
-        writingPanel.setAttribute("style", "border: " + BWidth + "px dashed gray");
-    }
+    writingPanel.setAttribute("style", `border: ${width} ${style} ${color}`);
 }
