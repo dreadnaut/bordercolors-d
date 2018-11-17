@@ -6,9 +6,9 @@
 <?xml-stylesheet href="chrome://messenger/skin/prefPanels.css" type="text/css"?>
 
 <dialog xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
-  onload="init();"
+  onload="onLoad();"
   buttons="accept, cancel"
-  ondialogaccept="accept();"
+  ondialogaccept="onAccept();"
   persist="screenX screenY"
   title="&optionPanel.title;"
   id="Preference panel"
