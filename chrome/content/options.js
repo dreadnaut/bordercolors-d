@@ -9,6 +9,9 @@ function onLoad() {
 
     const sizeSelector = document.getElementById('BorderWidth');
     sizeSelector.selectedIndex = borderColorsPrefs.getInt("borderWidth", 1) - 1;
+
+    const frameSelector = document.getElementById('FrameStyle');
+    frameSelector.selectedIndex = borderColorsPrefs.getInt('frameStyle', 0);
 }
 
 function onAccept() {
@@ -22,8 +25,11 @@ function onAccept() {
         }
     }
 
-    var borderWidth = document.getElementById("BorderWidth").getAttribute("value");
+    const borderWidth = document.getElementById("BorderWidth").getAttribute("value");
     borderColorsPrefs.setInt("borderWidth", borderWidth);
+
+    const frameStyle = document.getElementById("FrameStyle").getAttribute("value");
+    borderColorsPrefs.setInt("frameStyle", frameStyle);
 }
 
 function getAllIdentities() {

@@ -37,6 +37,22 @@
         </menupopup>
       </menulist>
     </hbox>
+    <hbox>
+      <label control="FrameStyle" value="&optionPanel.frameStyle;"/>
+      <menulist id="FrameStyle"  rows="1" align="right">
+        <menupopup>
+          <menuitem value="0" label="&optionPanel.frameWindow;"/>
+          <menuitem value="1" label="&optionPanel.frameWindowTopBottom;"/>
+          <menuitem value="2" label="&optionPanel.frameHeaders;"/>
+          <menuitem value="3" label="&optionPanel.frameHeadersTopBottom;"/>
+          <menuitem value="4" label="&optionPanel.frameTextarea;"/>
+          <menuitem value="5" label="&optionPanel.frameTextareaTopBottom;"/>
+          <menuitem value="6" label="&optionPanel.frameTextareaTop;"/>
+          <menuitem value="7" label="&optionPanel.frameTextareaGradientLeft;"/>
+          <menuitem value="8" label="&optionPanel.frameTextareaGradientRight;"/>
+        </menupopup>
+      </menulist>
+    </hbox>
   </groupbox>
   <script type="application/javascript" src="chrome://borderColors-D/content/BorderColorsPrefs.js"/>
   <script type="application/javascript" src="chrome://borderColors-D/content/options.js"/>

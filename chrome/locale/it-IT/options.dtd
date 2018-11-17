@@ -1,4 +1,16 @@
 <!ENTITY  optionPanel.title  "Seleziona le preferenze di colore per i tuoi account.">
 <!ENTITY  optionPanel.colorSelectors  "Selettori colore">
 <!ENTITY  optionPanel.otherOptions  "Altre opzioni">
-<!ENTITY  optionPanel.borderWidth  "Spessore del bordo: ">
+<!ENTITY  optionPanel.borderWidth  "Spessore del bordo">
+
+
+<!ENTITY  optionPanel.frameStyle                  "Area incorniciata">
+<!ENTITY  optionPanel.frameWindow                 "Finestra intera">
+<!ENTITY  optionPanel.frameWindowTopBottom        "Finestra intera, solo in alto e in basso">
+<!ENTITY  optionPanel.frameHeaders                "Intestazione">
+<!ENTITY  optionPanel.frameHeadersTopBottom       "Intestazione, solo in alto e in basso">
+<!ENTITY  optionPanel.frameTextarea               "Testo">
+<!ENTITY  optionPanel.frameTextareaTopBottom      "Testo, solo in alto e in basso">
+<!ENTITY  optionPanel.frameTextareaTop            "Testo, solo in alto">
+<!ENTITY  optionPanel.frameTextareaGradientLeft   "Testo, gradiente sul lato sinistro">
+<!ENTITY  optionPanel.frameTextareaGradientRight  "Testo, gradiente sul lato destro">
