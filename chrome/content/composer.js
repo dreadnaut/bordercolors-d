@@ -57,7 +57,7 @@ function applyIdentityBorder(identity) {
             break;
         case 8: // textarea, gradient on the right side
             document.getElementById("content-frame")
-                .setAttribute("style", `border-right: ${borderStyle}; border-image: linear-gradient(to bottom ${color}, white 50%) 1 100%;`);
+                .setAttribute("style", `border-right: ${borderStyle}; border-image: linear-gradient(to bottom, ${color}, white 50%) 1 100%;`);
             break;
         default: // case 0: full window
             document.getElementById("headers-box").parentNode
