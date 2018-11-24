@@ -37,7 +37,7 @@ function applyIdentityBorder(identity) {
             break;
         case 3: // headers, top and bottom
             document.getElementById("headers-box")
-                .setAttribute("style", `border-top: ${borderStyle}; border-bottom: ${borderStyle};`);
+                .setAttribute("style", `border-top: ${borderStyle}; border-bottom: ${borderStyle}; -moz-border-top-colors: unset;`);
             break;
         case 4: // text area
             document.getElementById("appcontent")
