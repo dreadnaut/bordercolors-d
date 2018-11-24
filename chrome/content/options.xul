@@ -37,7 +37,7 @@
         </menupopup>
       </menulist>
     </hbox>
-    <hbox>
+    <hbox align="center">
       <label control="FrameStyle" value="&optionPanel.frameStyle;"/>
       <menulist id="FrameStyle"  rows="1" align="right">
         <menupopup>
