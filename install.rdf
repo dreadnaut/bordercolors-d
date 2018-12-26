@@ -7,11 +7,12 @@
     <em:description>
       Shows a colorful border around the "New Message" window, so you can tell different identities apart.
     </em:description>
-    <em:version>1.1.0</em:version>
+    <em:version>1.1.1</em:version>
 
     <em:creator>dreadnaut</em:creator>
     <em:contributor>Giuseppe Tino</em:contributor>
     <em:contributor>Mike Krieger</em:contributor>
+    <em:contributor>Manuel Martin-Vivaldi - Spanish translation</em:contributor>
     <em:homepageURL>https://github.com/dreadnaut/bordercolors-d</em:homepageURL>
 
     <em:id>bordercolors-d@addonsdev.mozilla.org</em:id>
