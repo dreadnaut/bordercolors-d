@@ -1,4 +1,15 @@
-<!ENTITY  optionPanel.title  "Eliges los colores para tu cuentas de correo electrónico.">
-<!ENTITY  optionPanel.colorSelectors  "Selector de color">
-<!ENTITY  optionPanel.otherOptions  "Otras opciones">
-<!ENTITY  optionPanel.borderWidth  "Ancho del borde: ">
+<!ENTITY  optionPanel.title  "Elige los colores y el estilo para tus cuentas de correo electrónico">
+<!ENTITY  optionPanel.colorSelectors  "Selector de color para cada cuenta:">
+<!ENTITY  optionPanel.otherOptions  "Otras opciones:">
+<!ENTITY  optionPanel.borderWidth  "Ancho del borde">
+
+<!ENTITY  optionPanel.frameStyle                  "Estilo del marco">
+<!ENTITY  optionPanel.frameWindow                 "Ventana completa">
+<!ENTITY  optionPanel.frameWindowTopBottom        "Ventana completa: arriba y abajo">
+<!ENTITY  optionPanel.frameHeaders                "Cabecera">
+<!ENTITY  optionPanel.frameHeadersTopBottom       "Cabecera: arriba y abajo">
+<!ENTITY  optionPanel.frameTextarea               "Área de texto">
+<!ENTITY  optionPanel.frameTextareaTopBottom      "Área de texto: arriba y abajo">
+<!ENTITY  optionPanel.frameTextareaTop            "Área de texto: solo arriba">
+<!ENTITY  optionPanel.frameTextareaGradientLeft   "Área de texto: gradiente en el lado izquierdo">
+<!ENTITY  optionPanel.frameTextareaGradientRight  "Área de texto: gradiente en el lado derecho">
