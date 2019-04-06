@@ -33,11 +33,12 @@ function applyIdentityBorder(identity) {
             break;
         case 2: // headers
             document.getElementById("headers-box")
-                .setAttribute("style", `border: ${borderStyle};`);
+                .setAttribute("style", `border: ${borderStyle}; -moz-appearance: none;`);
             break;
         case 3: // headers, top and bottom
             document.getElementById("headers-box")
-                .setAttribute("style", `border-top: ${borderStyle}; border-bottom: ${borderStyle}; -moz-border-top-colors: unset;`);
+                .setAttribute("style", `border-top: ${borderStyle}; border-bottom: ${borderStyle};`
+                    + "-moz-appearance: none; -moz-border-top-colors: unset;");
             break;
         case 4: // text area
             document.getElementById("appcontent")
