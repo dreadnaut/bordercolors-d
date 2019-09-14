@@ -1,0 +1,27 @@
+{
+    "name": "BorderColors D",
+    "version": "1.1.2",
+    "developer": {
+        "name": "dreadnaut",
+        "url": "https://github.com/dreadnaut/bordercolors-d"
+    },
+    "icons": {
+        "64": "chrome/skin/iconSmall.png"
+    },
+    "description": "__MSG_addonDescription__",
+    "default_locale": "en-US",
+    "manifest_version": 2,
+    "applications": {
+        "gecko": {
+            "id": "bordercolors-d@addonsdev.mozilla.org",
+            "strict_min_version": "68.0"
+        }
+    },
+    "legacy": {
+        "type": "xul",
+        "options": {
+            "page": "chrome://borderColors-D/content/options.xul",
+            "open_in_tab": false
+        }
+    }
+}

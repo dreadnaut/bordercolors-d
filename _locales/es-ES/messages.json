@@ -1,0 +1,6 @@
+{
+    "addonDescription": {
+        "description": "Description of the add-on, as it appears in the Add-ons list.",
+        "message": "Permite de asignar un color al borde de la ventana de escritura para cada cuenta de correo electrónico."
+    }
+}

@@ -1,0 +1,6 @@
+{
+    "addonDescription": {
+        "description": "Description of the add-on, as it appears in the Add-ons list.",
+        "message": "Shows a colorful border around the New Message window, so you can tell different identities apart."
+    }
+}
