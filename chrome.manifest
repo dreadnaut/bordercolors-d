@@ -1,7 +1,7 @@
 skin        borderColors-D      default     chrome/skin/
 content     borderColors-D                  chrome/content/
-locale      borderColors-D      en-US       chrome/locale/en-US/
-locale      borderColors-D      it-IT       chrome/locale/it-IT/
-locale      borderColors-D      es-ES       chrome/locale/es-ES/
+locale      borderColors-D      en-US       _locales/en-US/
+locale      borderColors-D      it-IT       _locales/it-IT/
+locale      borderColors-D      es-ES       _locales/es-ES/
 
 overlay     chrome://messenger/content/messengercompose/messengercompose.xul    chrome://borderColors-D/content/composer.xul
