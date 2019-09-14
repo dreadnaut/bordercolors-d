@@ -18,8 +18,8 @@ function onAccept() {
     var colorList = document.getElementById("colorSelectors").getElementsByTagName("hbox");
     for (i = 0; i < colorList.length; i++) {
         var accountId = colorList.item(i).getAttribute("id");
-        var colorPicker = colorList.item(i).getElementsByTagName("colorpicker").item(0);
-        var color = colorPicker.getAttribute("color");
+        var colorPicker = colorList.item(i).getElementsByTagName("input").item(0);
+        var color = colorPicker.value;
         if (color != "transparent") {
             borderColorsPrefs.setColor(accountId, color.toString());
         }
@@ -55,9 +55,9 @@ function* elementsOf(collection, itemType) {
 }
 
 function createColorSelector(identity, color) {
-    var picker = document.createElement("colorpicker");
-    picker.setAttribute("type", "button");
-    picker.setAttribute("color", color);
+    var picker = document.createElementNS("http://www.w3.org/1999/xhtml", "input");
+    picker.type = "color";
+    picker.value= color;
 
     var separator = document.createElement("separator");
     separator.setAttribute("orient", "vertical");
