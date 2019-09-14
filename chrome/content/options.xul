@@ -1,25 +1,34 @@
 <?xml version="1.0"?>
+<?xml-stylesheet type="text/css" href="chrome://global/skin/"?>
+<?xml-stylesheet type="text/css" href="chrome://messenger/skin/preferences/preferences.css"?>
+<?xml-stylesheet type="text/css" href="chrome://messenger/skin/messenger.css"?>
 
 <!DOCTYPE dialog SYSTEM "chrome://borderColors-D/locale/options.dtd">
-
-<?xml-stylesheet href="chrome://communicator/skin/" type="text/css"?>
-<?xml-stylesheet href="chrome://messenger/skin/prefPanels.css" type="text/css"?>
 
 <dialog xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
   onload="onLoad();"
   buttons="accept, cancel"
   ondialogaccept="onAccept();"
   persist="screenX screenY"
-  title="&optionPanel.title;"
-  id="Preference panel"
+  title="BorderColors D"
+  id="borderColorsOptions"
   resizable="resizable"
   style="min-width: 30em; max-height: 40em;">
 
-  <groupbox id="colorSelectors" flex="1" style="overflow-x: hidden; overflow-y: auto">
-    <caption label="&optionPanel.colorSelectors;"/>
+  <hbox>
+    <label class="header">&optionPanel.title;</label>
+  </hbox>
+  <groupbox>
+    <hbox class="groupbox-title">
+      <label class="header">&optionPanel.colorSelectors;</label>
+    </hbox>
+    <vbox id="colorSelectors" flex="1" style="overflow-x: hidden; overflow-y: auto">
+    </vbox>
   </groupbox>
   <groupbox>
-    <caption label="&optionPanel.otherOptions;"/>
+    <hbox class="groupbox-title">
+      <label class="header">&optionPanel.otherOptions;</label>
+    </hbox>
     <hbox align="center">
       <label control="BorderWidth" value="&optionPanel.borderWidth;"/>
       <menulist id="BorderWidth"  rows="1" align="right">
