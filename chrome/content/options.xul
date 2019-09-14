@@ -8,7 +8,6 @@
 <dialog xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
   onload="onLoad();"
   buttons="accept, cancel"
-  ondialogaccept="onAccept();"
   persist="screenX screenY"
   title="BorderColors D"
   id="borderColorsOptions"

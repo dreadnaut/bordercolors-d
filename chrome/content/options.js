@@ -12,6 +12,8 @@ function onLoad() {
 
     const frameSelector = document.getElementById('FrameStyle');
     frameSelector.selectedIndex = borderColorsPrefs.getInt('frameStyle', 0);
+
+    document.addEventListener("dialogaccept", (event) => onAccept());
 }
 
 function onAccept() {
