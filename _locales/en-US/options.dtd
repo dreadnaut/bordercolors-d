@@ -13,3 +13,4 @@
 <!ENTITY  optionPanel.frameTextareaTop            "Text area, top only">
 <!ENTITY  optionPanel.frameTextareaGradientLeft   "Text area, gradient on the left side">
 <!ENTITY  optionPanel.frameTextareaGradientRight  "Text area, gradient on the right side">
+<!ENTITY  optionPanel.fillHeaders "Fill the headers area">

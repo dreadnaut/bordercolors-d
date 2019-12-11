@@ -13,3 +13,4 @@
 <!ENTITY  optionPanel.frameTextareaTop            "Área de texto, solo arriba">
 <!ENTITY  optionPanel.frameTextareaGradientLeft   "Área de texto, gradiente en el lado izquierdo">
 <!ENTITY  optionPanel.frameTextareaGradientRight  "Área de texto, gradiente en el lado derecho">
+<!ENTITY  optionPanel.fillHeaders                 "Cabecera, fondo">

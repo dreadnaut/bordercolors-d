@@ -60,6 +60,12 @@ function applyIdentityBorder(identity) {
             document.getElementById("content-frame")
                 .setAttribute("style", `border-right: ${borderStyle}; border-image: linear-gradient(to bottom, ${color}, white 50%) 1 100%;`);
             break;
+        case 9: // fill the headers area
+            document.getElementById("headers-box")
+                .setAttribute("style", `background: ${color};`);
+            document.getElementById("msgheaderstoolbar-box")
+                .setAttribute("style", `background: ${color};`);
+            break;
         default: // case 0: full window
             document.getElementById("headers-box").parentNode
                 .setAttribute("style", `border: ${borderStyle};`);

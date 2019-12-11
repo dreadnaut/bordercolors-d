@@ -14,3 +14,4 @@
 <!ENTITY  optionPanel.frameTextareaTop            "Testo, solo in alto">
 <!ENTITY  optionPanel.frameTextareaGradientLeft   "Testo, gradiente sul lato sinistro">
 <!ENTITY  optionPanel.frameTextareaGradientRight  "Testo, gradiente sul lato destro">
+<!ENTITY  optionPanel.fillHeaders                 "Sfondo dell'intestazione">

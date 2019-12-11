@@ -58,6 +58,7 @@
           <menuitem value="6" label="&optionPanel.frameTextareaTop;"/>
           <menuitem value="7" label="&optionPanel.frameTextareaGradientLeft;"/>
           <menuitem value="8" label="&optionPanel.frameTextareaGradientRight;"/>
+          <menuitem value="9" label="&optionPanel.fillHeaders;"/>
         </menupopup>
       </menulist>
     </hbox>
