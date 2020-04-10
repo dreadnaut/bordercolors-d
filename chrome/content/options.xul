@@ -17,11 +17,11 @@
   <hbox>
     <label class="header">&optionPanel.title;</label>
   </hbox>
-  <groupbox>
+  <groupbox style="max-height: 20rem;">
     <hbox class="groupbox-title">
       <label class="header">&optionPanel.colorSelectors;</label>
     </hbox>
-    <vbox id="colorSelectors" flex="1" style="overflow-x: hidden; overflow-y: auto">
+    <vbox id="colorSelectors" flex="1" style="overflow-x: hidden; overflow-y: auto;">
     </vbox>
   </groupbox>
   <groupbox>
