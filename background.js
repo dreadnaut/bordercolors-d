@@ -1,10 +1,62 @@
 
 console.log("BorderColors-D is here!");
 
-// TODO if first load, migrate legacy prefs
-// TODO connect style provider to current prefs
+class BorderColorsSettings {
 
-let switcher = new StyleSwitcher(randomStyle);
+  onFirstLoad(callback) {
+    // TODO ⚠ remove before release
+    messenger.storage.local.clear().then(callback);
+
+    // messenger.storage.local.get("firstLoadComplete")
+    //   .then(keys => keys["firstLoadComplete"] && callback());
+  }
+
+  firstLoadComplete() {
+    messenger.storage.local.set({ "firstLoadComplete": true });
+  }
+
+  getIdentityColor(identityId) {
+    const key = `identity-${identityId}`;
+    return messenger.storage.local.get(key)
+      .then(keys => keys[key]);
+  }
+
+  setIdentityColor(identityId, color) {
+    console.log(`Identity ${identityId} updated with color ${color}`);
+    var keys = {};
+    keys[`identity-${identityId}`] = color;
+    messenger.storage.local.set(keys);
+  }
+
+}
+
+
+const settings = new BorderColorsSettings();
+
+settings.onFirstLoad(() => {
+  console.log("Migrating legacy settings for BorderColors-D");
+  migrateSettingsTo(settings);
+  settings.firstLoadComplete();
+});
+
+function migrateSettingsTo(destinationSettings) {
+  const migrateIdentity = async (identity) => {
+    const label = `${identity.name} <${identity.email}>`;
+    const pref = `extensions.borderColors-D.colors.${label}`;
+
+    const color = await messenger.LegacyPrefs.get(pref, "");
+    if (color) {
+      destinationSettings.setIdentityColor(identity.id, color);
+    }
+  }
+
+  const flattenToList = (objects, attribute) =>
+    objects.reduce((list, x) => list.concat(x[attribute]), []);
+
+  browser.accounts.list()
+    .then(accounts => flattenToList(accounts, "identities"))
+    .then(identities => identities.forEach(migrateIdentity));
+}
 
 
 class StyleSwitcher {
@@ -38,13 +90,10 @@ class StyleSwitcher {
       });
   }
 
-  applyStyleForIdentity(identityId) {
+  async applyStyleForIdentity(identityId) {
     console.log("Applying new style for identity " + identityId);
     this.removeStyle();
-    this.applyStyle(this.styleProvider(identityId));
-  }
-
-  async applyStyle(code) {
+    const code = await this.styleProvider(identityId);
     this.registeredStyle = await browser.composeScripts
       .register({ css: [ { code } ] });
   }
@@ -60,44 +109,41 @@ class StyleSwitcher {
 }
 
 
+class Styles {
 
-
-// TODO migrate existing colors
-
-mapIdentities().then(identities => {
-  identities.forEach(identity => {
-    messenger.LegacyPrefs
-      .get("extensions.borderColors-D.colors." + identity.label, "[none set]")
-      .then(color => console.log(`${identity.label} => ${color}`));
-  });
-});
-
-
-async function mapIdentities() {
-  accounts = await browser.accounts.list();
-
-  return accounts.reduce(
-    (identities, account) => identities.concat(account.identities.map(mapIdentity)),
-    []
-  );
-}
-
-function mapIdentity(identity) {
-  return {
-    id: identity.id,
-    label: `${identity.name} <${identity.email}>`,
+  getStyle(styleId, color) {
+    return "html { min-height: 100%; box-sizing: border-box; "
+      + this.getHtmlStyle(styleId, color) + "}";
   }
+
+  getHtmlStyle(styleId, color) {
+    switch (styleId) {
+      case "top-only":
+        return this.topOnly(color);
+      default:
+        return this.undefinedStyle();
+    }
+  }
+
+  topOnly(color) {
+    return color
+      ? "border-top: 10px solid " + color + ";"
+      : "border-top: 10px dashed lightgray;";
+  }
+
+  undefinedStyle() {
+    return "border: 0.75rem dashed lightgray;";
+  }
+
 }
 
 
-// TODO replace this with a collection of styles
 
-function randomStyle() {
-  const colors = [ 'red', 'green', 'blue', 'cyan', 'yellow', 'magenta', 'black' ];
-  const newColor = colors[Math.floor(Math.random() * colors.length)];
-  return "html { "
-          + "min-height: 100%;"
-          + "border-left: 10px solid " + newColor + ";"
-          + "}";
-}
+const configuredStyle = 'top-only';
+const styleProvider = new Styles();
+
+let switcher = new StyleSwitcher(
+  async identityId => styleProvider
+    .getStyle(configuredStyle, await settings.getIdentityColor(identityId))
+);
 

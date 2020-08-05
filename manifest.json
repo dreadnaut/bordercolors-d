@@ -19,9 +19,9 @@
     },
     "permissions": [
       "accountsRead",
-      "activeTab",
       "tabs",
-      "compose"
+      "compose",
+      "storage"
     ],
     "background": {
       "scripts": [ "background.js" ]
