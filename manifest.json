@@ -1,6 +1,6 @@
 {
     "name": "BorderColors D",
-    "version": "1.4.0",
+    "version": "2020.7",
     "developer": {
         "name": "dreadnaut",
         "url": "https://github.com/dreadnaut/bordercolors-d"
@@ -14,14 +14,26 @@
     "applications": {
         "gecko": {
             "id": "bordercolors-d@addonsdev.mozilla.org",
-            "strict_min_version": "68.0"
+            "strict_min_version": "78.0"
         }
     },
-    "legacy": {
-        "type": "xul",
-        "options": {
-            "page": "chrome://borderColors-D/content/options.xul",
-            "open_in_tab": false
-        }
-    }
+    "permissions": [
+      "accountsRead",
+      "activeTab",
+      "tabs",
+      "compose"
+    ],
+    "background": {
+      "scripts": [ "background.js" ]
+    },
+    "experiment_apis": {
+		"LegacyPrefs": {
+			"schema": "api/LegacyPrefs/schema.json",
+			"parent": {
+				"scopes": [ "addon_parent" ],
+				"paths": [ [ "LegacyPrefs" ] ],
+				"script": "api/LegacyPrefs/implementation.js"
+			}
+		}
+	}
 }
