@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>BorderColors-D</title>
+    <link rel="stylesheet" href="options.css" type="text/css"></style>
+    <script type="module" src="options.js"></script>
+  </head>
+  <body>
+    <h1>BorderColors-D</h1>
+    <fieldset>
+      <legend>Assign colors to your identities</legend>
+      <ul id="colorSelectors">
+      </ul>
+    </fieldset>
+  </body>
+  <template id="identityTemplate">
+    <li>
+      <input data-key="color" type="color" />
+      <span data-key="address"></span>
+    </li>
+  </template>
+</html>

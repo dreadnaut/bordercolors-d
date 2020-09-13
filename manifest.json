@@ -1,6 +1,6 @@
 {
     "name": "BorderColors D",
-    "version": "2020.7",
+    "version": "2020.9",
     "developer": {
         "name": "dreadnaut",
         "url": "https://github.com/dreadnaut/bordercolors-d"
@@ -24,7 +24,12 @@
       "storage"
     ],
     "background": {
-      "scripts": [ "background.js" ]
+      "page": "pages/background.html"
+    },
+    "options_ui": {
+      "browser_style": true,
+      "open_in_tab": true,
+      "page": "pages/options.html"
     },
     "experiment_apis": {
 		"LegacyPrefs": {

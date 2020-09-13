@@ -1,0 +1,25 @@
+body {
+  max-width: 45rem;
+  font-family: system-ui;
+  font-size: 14px;
+}
+
+#colorSelectors {
+  list-style-type: none;
+  padding: 0;
+}
+
+#colorSelectors li {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+#colorSelectors li + li {
+  margin-top: 0.5rem;
+}
+
+.not-yet-defined {
+  font-style: italic;
+}
+
