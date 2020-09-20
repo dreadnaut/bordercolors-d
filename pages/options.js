@@ -26,10 +26,11 @@ async function renderIdentity(identity) {
 
 function initialize() {
   const identities = new Identities();
-  const selectors = document.getElementById('colorSelectors');
+  const colorSelectors = document.getElementById('colorSelectors');
 
   identities.forEach(
-    identity => renderIdentity(identity).then(item => selectors.appendChild(item))
+    identity => renderIdentity(identity)
+      .then(item => colorSelectors.appendChild(item))
   );
 }
 
