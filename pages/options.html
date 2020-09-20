@@ -13,11 +13,24 @@
       <ul id="colorSelectors">
       </ul>
     </fieldset>
+    <fieldset>
+      <legend>Choose the highlight style</legend>
+      <ul id="styleSelectors">
+      </ul>
+    </fieldset>
   </body>
   <template id="identityTemplate">
     <li>
       <input data-key="color" type="color" />
       <span data-key="address"></span>
+    </li>
+  </template>
+  <template id="styleTemplate">
+    <li>
+      <label>
+        <input name="borderStyle" data-key="radio" type="radio" />
+        <span data-key="label"></span>
+      </label>
     </li>
   </template>
 </html>

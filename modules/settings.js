@@ -21,6 +21,11 @@ export class Settings {
     return "top-only";
   }
 
+  setStyle(style) {
+    console.log(`Setting highlight style: ${style}`);
+    this._set({ "highlightStyle":  style });
+  }
+
   get fallbackColor() {
     return '#d3d3d3';
   }
