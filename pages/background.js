@@ -31,5 +31,5 @@ const styleProvider = new Styles(settings.fallbackColor);
 
 new StyleSwitcher(
   async identityId => styleProvider
-    .getStyle(settings.style, await settings.getIdentityColor(identityId))
+    .getStyle(await settings.style, await settings.getIdentityColor(identityId))
 );

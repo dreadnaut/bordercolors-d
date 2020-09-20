@@ -17,13 +17,17 @@ export class Settings {
   }
 
   get style() {
-    // TODO implement style configuration
-    return "top-only";
+    return this._get('highlightStyle')
+      .then(keys => keys['highlightStyle'] || this.fallbackStyle);
   }
 
   setStyle(style) {
     console.log(`Setting highlight style: ${style}`);
     this._set({ "highlightStyle":  style });
+  }
+
+  get fallbackStyle() {
+    return 'top';
   }
 
   get fallbackColor() {
