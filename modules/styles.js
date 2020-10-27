@@ -19,7 +19,7 @@ export class Styles {
       { key: 'top-and-bottom', label: 'Top and bottom border' },
       { key: 'top', label: 'Top border' },
       { key: 'left-side-gradient', label: 'Gradient on the left side' },
-      { key: 'background-top-gradient', label: 'Gradient in the top-right corner' },
+      { key: 'background-top-right-gradient', label: 'Gradient in the top-right corner' },
       { key: 'background-bottom-gradient', label: 'Gradient at the bottom' },
       { key: 'background', label: 'Background color' },
     ];
