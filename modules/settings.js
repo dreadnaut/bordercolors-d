@@ -31,7 +31,7 @@ export class Settings {
   }
 
   get fallbackColor() {
-    return '#d3d3d3';
+    return '#d3d3da';
   }
 
   onFirstLoad(callback) {
