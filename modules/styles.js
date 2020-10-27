@@ -30,6 +30,8 @@ export class Styles {
       ? `solid ${color}`
       : `dashed ${this.defaultColor}`;
 
+    color = color || this.defaultColor;
+
     switch (styleId) {
       case "all-sides":
         return `border: 10px ${borderStyle};`;
