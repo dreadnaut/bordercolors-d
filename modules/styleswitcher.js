@@ -7,7 +7,7 @@ export class StyleSwitcher {
   constructor(styleProvider) {
     this.styleProvider = styleProvider;
     this.registeredStyle = null;
-    this.tabStyles = {};
+    this.tabStyles = new Map();
 
     browser.windows.onCreated.addListener(
       newWindow => this.styleNewComposeWindow(newWindow)
@@ -38,17 +38,17 @@ export class StyleSwitcher {
     this.removeStyle(tabId);
     console.log(`Applying new style for identity ${identityId} to tab ${tabId}`);
     const code = await this.styleProvider(identityId);
-    this.tabStyles[tabId] = code;
+    this.tabStyles.set(tabId, { identityId, code });
     browser.tabs.insertCSS(tabId, { code });
   }
 
   removeStyle(tabId) {
-    if (!this.tabStyles[tabId]) {
+    if (!this.tabStyles.has(tabId)) {
       return;
     }
     console.log(`Clearing style for tab ${tabId}`);
-    browser.tabs.removeCSS(tabId, { code: this.tabStyles[tabId] });
-    this.tabStyles[tabId] = undefined;
+    browser.tabs.removeCSS(tabId, { code: this.tabStyles.get(tabId).code });
+    this.tabStyles.delete(tabId);
   }
 
 }
