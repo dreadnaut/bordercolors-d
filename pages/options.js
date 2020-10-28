@@ -7,6 +7,10 @@ import { Settings } from "../modules/settings.js";
 import { Styles } from "../modules/styles.js";
 import { Template } from "../modules/template.js";
 
+// Workaround to show options in the Add-ons Manager
+// See https://bugzilla.mozilla.org/show_bug.cgi?id=1641577
+window.browser = window.browser.extension.getBackgroundPage().browser;
+
 const settings = new Settings();
 
 async function renderIdentity(identity) {

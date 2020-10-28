@@ -28,7 +28,6 @@
     },
     "options_ui": {
       "browser_style": true,
-      "open_in_tab": true,
       "page": "pages/options.html"
     },
     "experiment_apis": {
