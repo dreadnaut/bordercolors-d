@@ -51,4 +51,11 @@ export class StyleSwitcher {
     this.tabStyles.delete(tabId);
   }
 
+  refreshAllWindows() {
+    console.log("Refreshing all windows");
+    this.tabStyles.forEach(
+      (info, tabId) => this.applyStyleForIdentity(tabId, info.identityId)
+    );
+  }
+
 }

@@ -2,6 +2,8 @@
  * BorderColors-D - https://github.com/dreadnaut/bordercolors-d/
  */
 
+const ON_CHANGE = 'borderColors.settings.changed';
+
 export class Settings {
 
   getIdentityColor(identityId) {
@@ -14,6 +16,7 @@ export class Settings {
     var keys = {};
     keys[`identity-${identityId}`] = color;
     this._set(keys);
+    this._dispatch(ON_CHANGE);
   }
 
   get style() {
@@ -22,8 +25,8 @@ export class Settings {
   }
 
   setStyle(style) {
-    console.log(`Setting highlight style: ${style}`);
     this._set({ "highlightStyle":  style });
+    this._dispatch(ON_CHANGE);
   }
 
   get fallbackStyle() {
@@ -43,7 +46,19 @@ export class Settings {
     this._set({ "firstLoadComplete": true });
   }
 
+  onChange(callback) {
+    this._extensionPage().addEventListener(ON_CHANGE, callback);
+  }
+
   // Private methods, one day
+  
+  _dispatch(eventName) {
+    this._extensionPage().dispatchEvent(new Event(eventName));
+  }
+
+  _extensionPage() {
+    return window.browser.extension.getBackgroundPage();
+  }
 
   _get(query) {
     return messenger.storage.local.get(query);
