@@ -37,6 +37,11 @@ export class Settings {
     return '#d3d3da';
   }
 
+  async themeBackground() {
+    const theme = await window.browser.theme.getCurrent();
+    return theme.colors ? theme.colors.toolbar : null;
+  }
+
   onFirstLoad(callback) {
     this._get("firstLoadComplete")
       .then(keys => keys["firstLoadComplete"] || callback());
