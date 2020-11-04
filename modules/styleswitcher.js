@@ -35,11 +35,11 @@ export class StyleSwitcher {
   }
 
   async applyStyleForIdentity(tabId, identityId) {
-    this.removeStyle(tabId);
     console.log(`Applying new style for identity ${identityId} to tab ${tabId}`);
     const code = await this.styleProvider(identityId);
-    this.tabStyles.set(tabId, { identityId, code });
     browser.tabs.insertCSS(tabId, { code });
+    this.removeStyle(tabId);
+    this.tabStyles.set(tabId, { identityId, code });
   }
 
   removeStyle(tabId) {
