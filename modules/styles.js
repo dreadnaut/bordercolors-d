@@ -48,9 +48,9 @@ export class Styles {
       case "background":
         return `background: ${color};`;
       case "background-top-right-gradient":
-        return `background: linear-gradient(to bottom left, ${color}, ${backgroundColor} 20%);`;
+        return `background: linear-gradient(to bottom left, ${color}, ${backgroundColor} 20%); background-attachment: fixed;`;
       case "background-bottom-gradient":
-        return `background: linear-gradient(to top, ${color}, ${backgroundColor} 20%);`;
+        return `background: linear-gradient(to top, ${color}, ${backgroundColor} 20%); background-attachment: fixed;`;
       default:
         return `${defaultBackground} border: 0.75rem dashed ${this.defaultColor};`
     }
