@@ -9,8 +9,8 @@ export class Styles {
   }
 
   getStyle(styleId, color) {
-    return "html { min-height: 100%; box-sizing: border-box; "
-      + this.getHtmlStyle(styleId, color) + "}";
+    return "html { min-height: 100%; box-sizing: border-box; }"
+      + this.getDecorationCss(styleId, color);
   }
 
   get all() {
@@ -25,7 +25,7 @@ export class Styles {
     ];
   }
 
-  getHtmlStyle(styleId, color) {
+  getDecorationCss(styleId, color) {
     const borderStyle = color 
       ? `solid ${color}`
       : `dashed ${this.defaultColor}`;
@@ -34,21 +34,21 @@ export class Styles {
 
     switch (styleId) {
       case "all-sides":
-        return `border: 10px ${borderStyle};`;
+        return `html { border: 10px ${borderStyle}; }`;
       case "top-and-bottom":
-        return `border-top: 10px ${borderStyle}; border-bottom: 10px ${borderStyle};`;
+        return `html { border-top: 10px ${borderStyle}; border-bottom: 10px ${borderStyle}; }`;
       case "top":
-        return `border-top: 10px ${borderStyle};`;
+        return `html { border-top: 10px ${borderStyle}; }`;
       case "left-side-gradient":
-        return `border-left: 10px ${borderStyle}; border-image: linear-gradient(to bottom, ${color}, transparent 50%) 1 100%;`;
+        return `html { border-left: 10px ${borderStyle}; border-image: linear-gradient(to bottom, ${color}, transparent 50%) 1 100%;`;
       case "background":
-        return `background: ${color};`;
+        return `body { background: ${color}; }`;
       case "background-top-right-gradient":
-        return `background: linear-gradient(to bottom left, ${color}, transparent 20%); background-attachment: fixed;`;
+        return `body { background-image: linear-gradient(to bottom left, ${color}, transparent 20%); background-attachment: fixed; }`;
       case "background-bottom-gradient":
-        return `background: linear-gradient(to top, ${color}, transparent 20%); background-attachment: fixed;`;
+        return `body { background-image: linear-gradient(to top, ${color}, transparent 20%); background-attachment: fixed; }`;
       default:
-        return `border: 0.75rem dashed ${this.defaultColor};`
+        return `html { border: 0.75rem dashed ${this.defaultColor}; }`;
     }
   }
 
