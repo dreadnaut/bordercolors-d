@@ -40,7 +40,7 @@ export class Styles {
       case "top":
         return `html { border-top: 10px ${borderStyle}; }`;
       case "left-side-gradient":
-        return `html { border-left: 10px ${borderStyle}; border-image: linear-gradient(to bottom, ${color}, transparent 50%) 1 100%;`;
+        return `html { border-left: 10px ${borderStyle}; border-image: linear-gradient(to bottom, ${color}, transparent 66%) 1 100%;`;
       case "background":
         return `body { background: ${color}; }`;
       case "background-top-right-gradient":
