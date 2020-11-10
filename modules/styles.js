@@ -8,11 +8,9 @@ export class Styles {
     this.defaultColor = defaultColor;
   }
 
-  getStyle(styleId, color, backgroundColor) {
-    const bodyBackground = backgroundColor ? "body { background: transparent; } " : "";
-
-    return bodyBackground + "html { min-height: 100%; box-sizing: border-box; "
-      + this.getHtmlStyle(styleId, color, backgroundColor) + "}";
+  getStyle(styleId, color) {
+    return "html { min-height: 100%; box-sizing: border-box; "
+      + this.getHtmlStyle(styleId, color) + "}";
   }
 
   get all() {
@@ -27,32 +25,30 @@ export class Styles {
     ];
   }
 
-  getHtmlStyle(styleId, color, backgroundColor) {
-    const defaultBackground = backgroundColor ? `background: ${backgroundColor};` : "";
+  getHtmlStyle(styleId, color) {
     const borderStyle = color 
       ? `solid ${color}`
       : `dashed ${this.defaultColor}`;
 
     color = color || this.defaultColor;
-    backgroundColor = backgroundColor || 'transparent';
 
     switch (styleId) {
       case "all-sides":
-        return `${defaultBackground} border: 10px ${borderStyle};`;
+        return `border: 10px ${borderStyle};`;
       case "top-and-bottom":
-        return `${defaultBackground} border-top: 10px ${borderStyle}; border-bottom: 10px ${borderStyle};`;
+        return `border-top: 10px ${borderStyle}; border-bottom: 10px ${borderStyle};`;
       case "top":
-        return `${defaultBackground} border-top: 10px ${borderStyle};`;
+        return `border-top: 10px ${borderStyle};`;
       case "left-side-gradient":
-        return `${defaultBackground} border-left: 10px ${borderStyle}; border-image: linear-gradient(to bottom, ${color}, ${backgroundColor} 50%) 1 100%;`;
+        return `border-left: 10px ${borderStyle}; border-image: linear-gradient(to bottom, ${color}, transparent 50%) 1 100%;`;
       case "background":
         return `background: ${color};`;
       case "background-top-right-gradient":
-        return `background: linear-gradient(to bottom left, ${color}, ${backgroundColor} 20%); background-attachment: fixed;`;
+        return `background: linear-gradient(to bottom left, ${color}, transparent 20%); background-attachment: fixed;`;
       case "background-bottom-gradient":
-        return `background: linear-gradient(to top, ${color}, ${backgroundColor} 20%); background-attachment: fixed;`;
+        return `background: linear-gradient(to top, ${color}, transparent 20%); background-attachment: fixed;`;
       default:
-        return `${defaultBackground} border: 0.75rem dashed ${this.defaultColor};`
+        return `border: 0.75rem dashed ${this.defaultColor};`
     }
   }
 

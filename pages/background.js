@@ -30,12 +30,8 @@ async function migrateIdentity(identity) {
 const styleProvider = new Styles(settings.fallbackColor);
 
 const styleSwitcher = new StyleSwitcher(
-  async (identityId) => styleProvider
-    .getStyle(
-      await settings.style,
-      await settings.getIdentityColor(identityId),
-      await settings.themeBackground()
-    )
+  async identityId => styleProvider
+    .getStyle(await settings.style, await settings.getIdentityColor(identityId))
 );
 
 settings.onChange(styleSwitcher.refreshAllWindows.bind(styleSwitcher));
