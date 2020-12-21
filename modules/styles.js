@@ -27,21 +27,19 @@ export class Styles {
   }
 
   getDecorationCss(styleId, color) {
-    const borderStyle = color 
-      ? `solid ${color}`
-      : `dashed ${this.defaultColor}`;
-
-    color = color || this.defaultColor;
+    if (!color) {
+      return `html { border: 10px dashed ${this.defaultColor}; }`;
+    }
 
     switch (styleId) {
       case "all-sides":
-        return `html { border: 10px ${borderStyle}; }`;
+        return `html { border: 10px solid ${color}; }`;
       case "top-and-bottom":
-        return `html { border-top: 10px ${borderStyle}; border-bottom: 10px ${borderStyle}; }`;
+        return `html { border-top: 10px solid ${color}; border-bottom: 10px solid ${color}; }`;
       case "top":
-        return `html { border-top: 10px ${borderStyle}; }`;
+        return `html { border-top: 10px solid ${color}; }`;
       case "left-side-gradient":
-        return `html { border-left: 10px ${borderStyle}; border-image: linear-gradient(to bottom, ${color}, transparent 66%) 1 100%;`;
+        return `html { border-left: 10px solid ${color}; border-image: linear-gradient(to bottom, ${color}, transparent 66%) 1 100%;`;
       case "background":
         return `body { background: ${color}; }`;
       case "background-top-right-gradient":
