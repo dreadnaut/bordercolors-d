@@ -45,6 +45,22 @@ async function renderStyle(style) {
   return template.element;
 }
 
+async function renderSize(size) {
+  const isChecked = size.key == await settings.size;
+
+  const template = new Template('sizeTemplate');
+  template.slot('label').innerText = size.label;
+  template.slot('radio').value = size.key;
+  if (isChecked) {
+    template.slot('radio').checked = true;
+  }
+  template.slot('radio').addEventListener(
+    'change',
+    event => settings.setSize(event.target.value)
+  );
+  return template.element;
+}
+
 function initialize() {
   const identities = new Identities();
   const colorSelectors = document.getElementById('colorSelectors');
@@ -61,6 +77,12 @@ function initialize() {
     style => renderStyle(style)
       .then(item => styleSelectors.appendChild(item))
   )
+
+  const sizeSelectors = document.getElementById('sizeSelectors');
+  settings.sizes.forEach(
+    size => renderSize(size)
+      .then(item => sizeSelectors.appendChild(item))
+  );
 }
 
 document.addEventListener("DOMContentLoaded", initialize);

@@ -18,6 +18,11 @@
       <ul id="styleSelectors">
       </ul>
     </fieldset>
+    <fieldset>
+      <legend>Choose the size of the effect</legend>
+      <ul id="sizeSelectors">
+      </ul>
+    </fieldset>
   </body>
   <template id="identityTemplate">
     <li>
@@ -29,6 +34,14 @@
     <li>
       <label>
         <input name="borderStyle" data-key="radio" type="radio" />
+        <span data-key="label"></span>
+      </label>
+    </li>
+  </template>
+  <template id="sizeTemplate">
+    <li>
+      <label>
+        <input name="borderSize" data-key="radio" type="radio" />
         <span data-key="label"></span>
       </label>
     </li>

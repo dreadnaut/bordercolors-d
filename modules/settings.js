@@ -33,6 +33,28 @@ export class Settings {
     return 'top';
   }
 
+  get sizes() {
+    return [
+      { key: 'small',  label: 'Small' },
+      { key: 'medium', label: 'Medium' },
+      { key: 'large',  label: 'Large' },
+    ];
+  }
+
+  get size() {
+    return this._get('highlightSize')
+      .then(keys => keys['highlightSize'] || this.fallbackSize);
+  }
+
+  setSize(size) {
+    this._set({ "highlightSize":  size });
+    this._dispatch(ON_CHANGE);
+  }
+
+  get fallbackSize() {
+    return 'large';
+  }
+
   get fallbackColor() {
     return '#d3d3da';
   }
