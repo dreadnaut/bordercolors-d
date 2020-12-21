@@ -4,11 +4,6 @@ body {
   font-size: 14px;
 }
 
-#colorSelectors {
-  list-style-type: none;
-  padding: 0;
-}
-
 #colorSelectors li {
   display: flex;
   gap: 0.5rem;
@@ -23,3 +18,8 @@ body {
   font-style: italic;
 }
 
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0.5rem 0;
+}
