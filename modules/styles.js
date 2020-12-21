@@ -58,23 +58,27 @@ export class Styles {
   }
 
   styleAllSides(color, size) {
-    return `html { border: 10px solid ${color}; }`;
+    const width = { small: '3px', medium: '6px', large: '10px' }[size];
+    return `html { border: ${width} solid ${color}; }`;
   }
 
   styleTopAndBottom(color, size) {
+    const width = { small: '3px', medium: '6px', large: '10px' }[size];
     return `html {
-      border-top: 10px solid ${color};
-      border-bottom: 10px solid ${color};
+      border-top: ${width} solid ${color};
+      border-bottom: ${width} solid ${color};
     }`;
   }
 
   styleTop(color, size) {
-    return `html { border-top: 10px solid ${color}; }`;
+    const width = { small: '3px', medium: '6px', large: '10px' }[size];
+    return `html { border-top: ${width} solid ${color}; }`;
   }
 
   styleLeftSideGradient(color, size) {
+    const width = { small: '5px', medium: '10px', large: '15px' }[size];
     return `html {
-      border-left: 10px solid ${color};
+      border-left: ${width} solid ${color};
       border-image: linear-gradient(to bottom, ${color}, transparent 66%) 1 100%;
     }`;
   }
@@ -84,26 +88,29 @@ export class Styles {
   }
 
   styleBackgroundTopRightGradient(color, size) {
+    const width = { small: '5%', medium: '10%', large: '20%' }[size];
     return `body {
-      background-image: linear-gradient(to bottom left, ${color}, transparent 20%);
+      background-image: linear-gradient(to bottom left, ${color}, transparent ${width});
       background-attachment: fixed;
     }`;
   }
 
   styleBackgroundFourCornersGradient(color, size) {
+    const width = { small: '3%', medium: '6%', large: '10%' }[size];
     return `body {
       background-image:
-        linear-gradient( 45deg, ${color}, transparent 10%),
-        linear-gradient(135deg, ${color}, transparent 10%),
-        linear-gradient(225deg, ${color}, transparent 10%),
-        linear-gradient(315deg, ${color}, transparent 10%);
+        linear-gradient( 45deg, ${color}, transparent ${width}),
+        linear-gradient(135deg, ${color}, transparent ${width}),
+        linear-gradient(225deg, ${color}, transparent ${width}),
+        linear-gradient(315deg, ${color}, transparent ${width});
       background-attachment: fixed;
     }`;
   }
 
   styleBackgroundBottomGradient(color, size) {
+    const width = { small: '5%', medium: '10%', large: '20%' }[size];
     return `body {
-      background-image: linear-gradient(to top, ${color}, transparent 20%);
+      background-image: linear-gradient(to top, ${color}, transparent ${width});
       background-attachment: fixed;
     }`;
   }
