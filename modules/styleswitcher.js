@@ -35,8 +35,14 @@ export class StyleSwitcher {
   }
 
   async applyStyleForIdentity(tabId, identityId) {
-    console.log(`Applying new style for identity ${identityId} to tab ${tabId}`);
     const code = await this.styleProvider(identityId);
+
+    // if the CSS is unchanged, don't do anything
+    if (code == this.tabStyles.get(tabId)?.code) {
+      return;
+    }
+
+    console.log(`Applying new border style for identity ${identityId} to tab ${tabId}`);
     browser.tabs.insertCSS(tabId, { code });
     this.removeStyle(tabId);
     this.tabStyles.set(tabId, { identityId, code });
@@ -46,13 +52,12 @@ export class StyleSwitcher {
     if (!this.tabStyles.has(tabId)) {
       return;
     }
-    console.log(`Clearing style for tab ${tabId}`);
     browser.tabs.removeCSS(tabId, { code: this.tabStyles.get(tabId).code });
     this.tabStyles.delete(tabId);
   }
 
   refreshAllWindows() {
-    console.log("Refreshing all windows");
+    console.log("Refreshing the border style for all compose windows");
     this.tabStyles.forEach(
       (info, tabId) => this.applyStyleForIdentity(tabId, info.identityId)
     );
