@@ -28,34 +28,84 @@ export class Styles {
 
   getDecorationCss(styleId, color) {
     if (!color) {
-      return `html { border: 10px dashed ${this.defaultColor}; }`;
+      return this.styleFallback(this.defaultColor);
     }
 
     switch (styleId) {
       case "all-sides":
-        return `html { border: 10px solid ${color}; }`;
+        return this.styleAllSides(color);
       case "top-and-bottom":
-        return `html { border-top: 10px solid ${color}; border-bottom: 10px solid ${color}; }`;
+        return this.styleTopAndBottom(color);
       case "top":
-        return `html { border-top: 10px solid ${color}; }`;
+        return this.styleTop(color);
       case "left-side-gradient":
-        return `html { border-left: 10px solid ${color}; border-image: linear-gradient(to bottom, ${color}, transparent 66%) 1 100%;`;
+        return this.styleLeftSideGradient(color);
       case "background":
-        return `body { background: ${color}; }`;
+        return this.styleBackground(color);
       case "background-top-right-gradient":
-        return `body { background-image: linear-gradient(to bottom left, ${color}, transparent 20%); background-attachment: fixed; }`;
+        return this.styleBackgroundTopRightGradient(color);
       case "background-four-corners-gradient":
-        return `body { background-image:
-          linear-gradient( 45deg, ${color}, transparent 10%),
-          linear-gradient(135deg, ${color}, transparent 10%),
-          linear-gradient(225deg, ${color}, transparent 10%),
-          linear-gradient(315deg, ${color}, transparent 10%);
-          background-attachment: fixed; }`;
+        return this.styleBackgroundFourCornersGradient(color);
       case "background-bottom-gradient":
-        return `body { background-image: linear-gradient(to top, ${color}, transparent 20%); background-attachment: fixed; }`;
+        return this.styleBackgroundBottomGradient(color);
       default:
-        return `html { border: 0.75rem dashed ${this.defaultColor}; }`;
+        return this.styleFallback(color);
     }
+  }
+
+  styleFallback(color) {
+    return `html { border: 10px dashed ${color}; }`;
+  }
+
+  styleAllSides(color) {
+    return `html { border: 10px solid ${color}; }`;
+  }
+
+  styleTopAndBottom(color) {
+    return `html {
+      border-top: 10px solid ${color};
+      border-bottom: 10px solid ${color};
+    }`;
+  }
+
+  styleTop(color) {
+    return `html { border-top: 10px solid ${color}; }`;
+  }
+
+  styleLeftSideGradient(color) {
+    return `html {
+      border-left: 10px solid ${color};
+      border-image: linear-gradient(to bottom, ${color}, transparent 66%) 1 100%;
+    }`;
+  }
+
+  styleBackground(color) {
+    return `body { background: ${color}; }`;
+  }
+
+  styleBackgroundTopRightGradient(color) {
+    return `body {
+      background-image: linear-gradient(to bottom left, ${color}, transparent 20%);
+      background-attachment: fixed;
+    }`;
+  }
+
+  styleBackgroundFourCornersGradient(color) {
+    return `body {
+      background-image:
+        linear-gradient( 45deg, ${color}, transparent 10%),
+        linear-gradient(135deg, ${color}, transparent 10%),
+        linear-gradient(225deg, ${color}, transparent 10%),
+        linear-gradient(315deg, ${color}, transparent 10%);
+      background-attachment: fixed;
+    }`;
+  }
+
+  styleBackgroundBottomGradient(color) {
+    return `body {
+      background-image: linear-gradient(to top, ${color}, transparent 20%);
+      background-attachment: fixed;
+    }`;
   }
 
 }
