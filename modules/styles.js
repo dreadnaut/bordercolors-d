@@ -8,9 +8,9 @@ export class Styles {
     this.defaultColor = defaultColor;
   }
 
-  getStyle(styleId, color) {
+  getStyle(styleId, size, color) {
     return "html { min-height: 100%; box-sizing: border-box; }"
-      + this.getDecorationCss(styleId, color);
+      + this.getDecorationCss(styleId, size, color);
   }
 
   get all() {
@@ -26,28 +26,28 @@ export class Styles {
     ];
   }
 
-  getDecorationCss(styleId, color) {
+  getDecorationCss(styleId, size, color) {
     if (!color) {
       return this.styleFallback(this.defaultColor);
     }
 
     switch (styleId) {
       case "all-sides":
-        return this.styleAllSides(color);
+        return this.styleAllSides(color, size);
       case "top-and-bottom":
-        return this.styleTopAndBottom(color);
+        return this.styleTopAndBottom(color, size);
       case "top":
-        return this.styleTop(color);
+        return this.styleTop(color, size);
       case "left-side-gradient":
-        return this.styleLeftSideGradient(color);
+        return this.styleLeftSideGradient(color, size);
       case "background":
-        return this.styleBackground(color);
+        return this.styleBackground(color, size);
       case "background-top-right-gradient":
-        return this.styleBackgroundTopRightGradient(color);
+        return this.styleBackgroundTopRightGradient(color, size);
       case "background-four-corners-gradient":
-        return this.styleBackgroundFourCornersGradient(color);
+        return this.styleBackgroundFourCornersGradient(color, size);
       case "background-bottom-gradient":
-        return this.styleBackgroundBottomGradient(color);
+        return this.styleBackgroundBottomGradient(color, size);
       default:
         return this.styleFallback(color);
     }
@@ -57,40 +57,40 @@ export class Styles {
     return `html { border: 10px dashed ${color}; }`;
   }
 
-  styleAllSides(color) {
+  styleAllSides(color, size) {
     return `html { border: 10px solid ${color}; }`;
   }
 
-  styleTopAndBottom(color) {
+  styleTopAndBottom(color, size) {
     return `html {
       border-top: 10px solid ${color};
       border-bottom: 10px solid ${color};
     }`;
   }
 
-  styleTop(color) {
+  styleTop(color, size) {
     return `html { border-top: 10px solid ${color}; }`;
   }
 
-  styleLeftSideGradient(color) {
+  styleLeftSideGradient(color, size) {
     return `html {
       border-left: 10px solid ${color};
       border-image: linear-gradient(to bottom, ${color}, transparent 66%) 1 100%;
     }`;
   }
 
-  styleBackground(color) {
+  styleBackground(color, size) {
     return `body { background: ${color}; }`;
   }
 
-  styleBackgroundTopRightGradient(color) {
+  styleBackgroundTopRightGradient(color, size) {
     return `body {
       background-image: linear-gradient(to bottom left, ${color}, transparent 20%);
       background-attachment: fixed;
     }`;
   }
 
-  styleBackgroundFourCornersGradient(color) {
+  styleBackgroundFourCornersGradient(color, size) {
     return `body {
       background-image:
         linear-gradient( 45deg, ${color}, transparent 10%),
@@ -101,7 +101,7 @@ export class Styles {
     }`;
   }
 
-  styleBackgroundBottomGradient(color) {
+  styleBackgroundBottomGradient(color, size) {
     return `body {
       background-image: linear-gradient(to top, ${color}, transparent 20%);
       background-attachment: fixed;

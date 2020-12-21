@@ -31,7 +31,11 @@ const styleProvider = new Styles(settings.fallbackColor);
 
 const styleSwitcher = new StyleSwitcher(
   async identityId => styleProvider
-    .getStyle(await settings.style, await settings.getIdentityColor(identityId))
+    .getStyle(
+      await settings.style,
+      await settings.size,
+      await settings.getIdentityColor(identityId)
+    )
 );
 
 settings.onChange(styleSwitcher.refreshAllWindows.bind(styleSwitcher));
