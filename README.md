@@ -1,16 +1,5 @@
 # BorderColors D
 
-## Mail-extension version ⚠
-
-A mail-extension version compatible with TB78+ is in progress. The initial
-version will lack some feature, but I plan to bring most back.
-
-However, some styles are not possible with the new API. If you have suggestions
-for new ones, open a issue on GitHub.
-
-
-## This extension
-
 If you have Thundebird configured with multiple accounts or identities, you
 might have sent emails from the wrong one once or twice. This add-on tries to
 prevent that mistake by adding a colorful border around the "New message"
