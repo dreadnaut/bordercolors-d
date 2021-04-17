@@ -1,6 +1,62 @@
 {
     "addonDescription": {
         "description": "Description of the add-on, as it appears in the Add-ons list.",
-        "message": "Consente di assegnare un colore al bordo della finestra di composizione dei messaggi per ogni identità."
+        "message": "Aggiunge un bordo colorato che evidenzia l'identità usata per comporre una mail."
+    },
+    "heading-color-selector": {
+        "description": "The heading above the list of identities, in the options",
+        "message": "Colori assegnati alle identità"
+    },
+    "heading-style-selector": {
+        "description": "The heading above the list of styles, in the options",
+        "message": "Tipo di bordo od effetto"
+    },
+    "heading-size-selector": {
+        "description": "The heading above the list of style sizes, in the options",
+        "message": "Dimensione del bordo od effetto"
+    },
+    "style-all-sides": {
+        "description": "A border along all four sides of the composer",
+        "message": "Cornice dell'area di testo"
+    },
+    "style-top-and-bottom": {
+        "description": "A border at the top and bottom of the composer",
+        "message": "Bordo in alto e in basso"
+    },
+    "style-top": {
+        "description": "A border at the top of the composer",
+        "message": "Bordo in alto"
+    },
+    "style-left-side-gradient": {
+        "description": "A gradient on the left side of the composer",
+        "message": "Sfumatura sul lato sinistro"
+    },
+    "style-background-top-right-gradient": {
+        "description": "A gradient in the top-right corner of the composer",
+        "message": "Sfumatura in alto a destra"
+    },
+    "style-background-four-corners-gradient": {
+        "description": "A gradient in each corner of the composer",
+        "message": "Angoli sfumati"
+    },
+    "style-background-bottom-gradient": {
+        "description": "A gradient at the bottom of the composer",
+        "message": "Sfumatura in basso"
+    },
+    "style-background": {
+        "description": "The color is applied to the whole background of the composer",
+        "message": "Sfondo dell'area di testo"
+    },
+    "size-small": {
+        "description": "Label for the 'small' size option",
+        "message": "Piccolo"
+    },
+    "size-medium": {
+        "description": "Label for the 'medium' size option",
+        "message": "Medio"
+    },
+    "size-large": {
+        "description": "Label for the 'large' size option",
+        "message": "Grande"
     }
 }
