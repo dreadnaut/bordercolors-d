@@ -15,14 +15,14 @@ export class Styles {
 
   get all() {
     return [
-      { key: 'all-sides', label: 'All sides' },
-      { key: 'top-and-bottom', label: 'Top and bottom border' },
-      { key: 'top', label: 'Top border' },
-      { key: 'left-side-gradient', label: 'Gradient on the left side' },
-      { key: 'background-top-right-gradient', label: 'Gradient in the top-right corner' },
-      { key: 'background-four-corners-gradient', label: 'Gradient in the four corners' },
-      { key: 'background-bottom-gradient', label: 'Gradient at the bottom' },
-      { key: 'background', label: 'Background color' },
+      { key: 'all-sides' },
+      { key: 'top-and-bottom' },
+      { key: 'top' },
+      { key: 'left-side-gradient' },
+      { key: 'background-top-right-gradient' },
+      { key: 'background-four-corners-gradient' },
+      { key: 'background-bottom-gradient' },
+      { key: 'background' },
     ];
   }
 

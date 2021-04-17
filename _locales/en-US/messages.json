@@ -14,5 +14,37 @@
     "heading-size-selector": {
         "description": "The heading above the list of style sizes, in the options",
         "message": "Choose the size of the effect"
+    },
+    "style-all-sides": {
+        "description": "A border along all four sides of the composer",
+        "message": "All sides"
+    },
+    "style-top-and-bottom": {
+        "description": "A border at the top and bottom of the composer",
+        "message": "Top and bottom border"
+    },
+    "style-top": {
+        "description": "A border at the top of the composer",
+        "message": "Top border"
+    },
+    "style-left-side-gradient": {
+        "description": "A gradient on the left side of the composer",
+        "message": "Gradient on the left side"
+    },
+    "style-background-top-right-gradient": {
+        "description": "A gradient in the top-right corner of the composer",
+        "message": "Gradient in the top-right"
+    },
+    "style-background-four-corners-gradient": {
+        "description": "A gradient in each corner of the composer",
+        "message": "Gradient in the four corners"
+    },
+    "style-background-bottom-gradient": {
+        "description": "A gradient at the bottom of the composer",
+        "message": "Gradient at the bottom"
+    },
+    "style-background": {
+        "description": "The color is applied to the whole background of the composer",
+        "message": "Background color"
     }
 }

@@ -33,8 +33,10 @@ async function renderStyle(style) {
   const isChecked = style.key == await settings.style;
 
   const template = new Template('styleTemplate');
-  template.slot('label').innerText = style.label;
   template.slot('radio').value = style.key;
+  template.slot('label').innerText =
+    browser.i18n.getMessage('style-' + style.key);
+
   if (isChecked) {
     template.slot('radio').checked = true;
   }
