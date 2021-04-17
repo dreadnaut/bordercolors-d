@@ -51,8 +51,10 @@ async function renderSize(size) {
   const isChecked = size.key == await settings.size;
 
   const template = new Template('sizeTemplate');
-  template.slot('label').innerText = size.label;
   template.slot('radio').value = size.key;
+  template.slot('label').innerText =
+    browser.i18n.getMessage('size-' + size.key);
+
   if (isChecked) {
     template.slot('radio').checked = true;
   }

@@ -46,5 +46,17 @@
     "style-background": {
         "description": "The color is applied to the whole background of the composer",
         "message": "Background color"
+    },
+    "size-small": {
+        "description": "Label for the 'small' size option",
+        "message": "Small"
+    },
+    "size-medium": {
+        "description": "Label for the 'medium' size option",
+        "message": "Medium"
+    },
+    "size-large": {
+        "description": "Label for the 'large' size option",
+        "message": "Large"
     }
 }
