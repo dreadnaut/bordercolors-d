@@ -66,6 +66,7 @@ async function renderSize(size) {
 }
 
 function initialize() {
+  // generate one color select for each identity
   const identities = new Identities();
   const colorSelectors = document.getElementById('colorSelectors');
 
@@ -74,6 +75,7 @@ function initialize() {
       .then(item => colorSelectors.appendChild(item))
   );
 
+  // generate radio buttons for styles
   const styles = new Styles();
   const styleSelectors = document.getElementById('styleSelectors');
 
@@ -82,12 +84,14 @@ function initialize() {
       .then(item => styleSelectors.appendChild(item))
   )
 
+  // generate radio buttons for effect sizes
   const sizeSelectors = document.getElementById('sizeSelectors');
   settings.sizes.forEach(
     size => renderSize(size)
       .then(item => sizeSelectors.appendChild(item))
   );
 
+  // inject localised strings in the options page
   for (const node of document.querySelectorAll('[data-i18n]')) {
     node.innerText = browser.i18n.getMessage(node.dataset.i18n)
       || `⚠ No translation for "${node.dataset.i18n}"`;
