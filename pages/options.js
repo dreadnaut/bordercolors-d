@@ -30,12 +30,12 @@ async function renderIdentity(identity) {
 }
 
 async function renderStyle(style) {
-  const isChecked = style.key == await settings.style;
+  const isChecked = style == await settings.style;
 
   const template = new Template('styleTemplate');
-  template.slot('radio').value = style.key;
+  template.slot('radio').value = style;
   template.slot('label').innerText =
-    browser.i18n.getMessage('style-' + style.key);
+    browser.i18n.getMessage('style-' + style);
 
   if (isChecked) {
     template.slot('radio').checked = true;
@@ -48,12 +48,12 @@ async function renderStyle(style) {
 }
 
 async function renderSize(size) {
-  const isChecked = size.key == await settings.size;
+  const isChecked = size == await settings.size;
 
   const template = new Template('sizeTemplate');
-  template.slot('radio').value = size.key;
+  template.slot('radio').value = size;
   template.slot('label').innerText =
-    browser.i18n.getMessage('size-' + size.key);
+    browser.i18n.getMessage('size-' + size);
 
   if (isChecked) {
     template.slot('radio').checked = true;
