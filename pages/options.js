@@ -14,6 +14,7 @@ window.browser = window.browser.extension.getBackgroundPage().browser;
 const settings = new Settings();
 
 async function renderIdentity(identity) {
+  console.debug(`BorderColors-D: Rendering selector for identity ${identity.id}`);
   const color = await settings.getIdentityColor(identity.id);
   const label = `${identity.name} <${identity.email}>`;
   const updateIdentity =
@@ -59,6 +60,7 @@ function renderSize(size, isChecked) {
 
 async function initialize() {
   // generate one color select for each identity
+  console.debug('BorderColors-D: Rendering options, identities');
   const identities = new Identities();
   const colorSelectors = document.getElementById('colorSelectors');
 
@@ -68,6 +70,7 @@ async function initialize() {
   );
 
   // generate radio buttons for styles
+  console.debug('BorderColors-D: Rendering options, styles');
   const styles = new Styles();
   const styleSelectors = document.getElementById('styleSelectors');
   const currentStyle = await settings.style;
@@ -77,6 +80,7 @@ async function initialize() {
     .map(item => styleSelectors.appendChild(item));
 
   // generate radio buttons for effect sizes
+  console.debug('BorderColors-D: Rendering options, sizes');
   const sizeSelectors = document.getElementById('sizeSelectors');
   const currentSize = await settings.size;
 

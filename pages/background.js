@@ -22,7 +22,7 @@ async function migrateIdentity(identity) {
   const pref = `extensions.borderColors-D.colors.${label}`;
   const color = await messenger.LegacyPrefs.get(pref, "");
   if (color) {
-    console.log(`Migrating legacy preference: ${label} → ${color}`);
+    console.debug(`Migrating legacy preference: ${label} → ${color}`);
     settings.setIdentityColor(identity.id, color);
   }
 }
