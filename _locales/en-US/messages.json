@@ -2,5 +2,17 @@
     "addonDescription": {
         "description": "Description of the add-on, as it appears in the Add-ons list.",
         "message": "Shows a colorful border around the New Message window, so you can tell different identities apart."
+    },
+    "heading-color-selector": {
+        "description": "The heading above the list of identities, in the options",
+        "message": "Assign colors to your identities"
+    },
+    "heading-style-selector": {
+        "description": "The heading above the list of styles, in the options",
+        "message": "Choose the highlight style"
+    },
+    "heading-size-selector": {
+        "description": "The heading above the list of style sizes, in the options",
+        "message": "Choose the size of the effect"
     }
 }

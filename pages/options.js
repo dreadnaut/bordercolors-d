@@ -83,6 +83,11 @@ function initialize() {
     size => renderSize(size)
       .then(item => sizeSelectors.appendChild(item))
   );
+
+  for (const node of document.querySelectorAll('[data-i18n]')) {
+    node.innerText = browser.i18n.getMessage(node.dataset.i18n)
+      || `⚠ No translation for "${node.dataset.i18n}"`;
+  }
 }
 
 document.addEventListener("DOMContentLoaded", initialize);
