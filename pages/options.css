@@ -1,25 +1,55 @@
+@media (prefers-color-scheme: dark)  {
+  body {
+    background-color: #202023;
+    color: #b1b1b3;
+  }
+}
+
 body {
-  max-width: 45rem;
   font-family: system-ui;
-  font-size: 14px;
+  font-size: 1.1rem;
+  line-height: 1.4;
+  padding-bottom: 1rem;
+}
+
+fieldset {
+  background: rgba(128,128,128,0.02);
+  border-radius: 0.25rem;
+  border: 1px solid rgba(128,128,128,0.08);
+  margin: 0.5rem;
+  padding: 0 1rem;
+}
+
+legend {
+  font-size: 1.2em;
+  font-weight: bold;
 }
 
 #colorSelectors li {
+  align-items: center;
   display: flex;
   gap: 0.5rem;
-  align-items: center;
 }
 
 #colorSelectors li + li {
   margin-top: 0.5rem;
 }
 
+#colorSelectors input[type=color] {
+  padding: 0;
+}
+
 .not-yet-defined {
   font-style: italic;
 }
 
+.not-yet-defined:after {
+  content: '👈';
+  margin-left: 0.5rem;
+}
+
 ul {
   list-style-type: none;
+  margin: 1rem 0;
   padding: 0;
-  margin: 0.5rem 0;
 }
