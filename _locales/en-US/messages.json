@@ -1,8 +1,10 @@
 {
+    "__WET_GROUP__INFO": { "message": "Add-on information" },
     "addonDescription": {
         "description": "Description of the add-on, as it appears in the Add-ons list.",
         "message": "Shows a colorful border around the New Message window, so you can tell different identities apart."
     },
+    "__WET_GROUP__OPTIONS": { "message": "Options page" },
     "heading-color-selector": {
         "description": "The heading above the list of identities, in the options",
         "message": "Assign colors to your identities"
@@ -15,6 +17,20 @@
         "description": "The heading above the list of style sizes, in the options",
         "message": "Choose the size of the effect"
     },
+    "__WET_GROUP__SIZES": { "message": "Size labels" },
+    "size-small": {
+        "description": "Label for the 'small' size option",
+        "message": "Small"
+    },
+    "size-medium": {
+        "description": "Label for the 'medium' size option",
+        "message": "Medium"
+    },
+    "size-large": {
+        "description": "Label for the 'large' size option",
+        "message": "Large"
+    },
+    "__WET_GROUP__STYLES": { "message": "Style names" },
     "style-all-sides": {
         "description": "A border along all four sides of the composer",
         "message": "All sides"
@@ -46,17 +62,5 @@
     "style-background": {
         "description": "The color is applied to the whole background of the composer",
         "message": "Background color"
-    },
-    "size-small": {
-        "description": "Label for the 'small' size option",
-        "message": "Small"
-    },
-    "size-medium": {
-        "description": "Label for the 'medium' size option",
-        "message": "Medium"
-    },
-    "size-large": {
-        "description": "Label for the 'large' size option",
-        "message": "Large"
     }
 }

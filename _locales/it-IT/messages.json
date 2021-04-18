@@ -1,8 +1,10 @@
 {
+    "__WET_GROUP__INFO": { "message": "Add-on information" },
     "addonDescription": {
         "description": "Description of the add-on, as it appears in the Add-ons list.",
         "message": "Aggiunge un bordo colorato che evidenzia l'identità usata per comporre una mail."
     },
+    "__WET_GROUP__OPTIONS": { "message": "Options page" },
     "heading-color-selector": {
         "description": "The heading above the list of identities, in the options",
         "message": "Colori assegnati alle identità"
@@ -15,6 +17,20 @@
         "description": "The heading above the list of style sizes, in the options",
         "message": "Dimensione del bordo od effetto"
     },
+    "__WET_GROUP__SIZES": { "message": "Size labels" },
+    "size-small": {
+        "description": "Label for the 'small' size option",
+        "message": "Piccolo"
+    },
+    "size-medium": {
+        "description": "Label for the 'medium' size option",
+        "message": "Medio"
+    },
+    "size-large": {
+        "description": "Label for the 'large' size option",
+        "message": "Grande"
+    },
+    "__WET_GROUP__STYLES": { "message": "Style names" },
     "style-all-sides": {
         "description": "A border along all four sides of the composer",
         "message": "Cornice dell'area di testo"
@@ -46,17 +62,5 @@
     "style-background": {
         "description": "The color is applied to the whole background of the composer",
         "message": "Sfondo dell'area di testo"
-    },
-    "size-small": {
-        "description": "Label for the 'small' size option",
-        "message": "Piccolo"
-    },
-    "size-medium": {
-        "description": "Label for the 'medium' size option",
-        "message": "Medio"
-    },
-    "size-large": {
-        "description": "Label for the 'large' size option",
-        "message": "Grande"
     }
 }
