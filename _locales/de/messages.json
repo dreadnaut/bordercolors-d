@@ -1,0 +1,66 @@
+{
+    "__WET_GROUP__INFO": { "message": "Add-on information" },
+    "addonDescription": {
+        "description": "Description of the add-on, as it appears in the Add-ons list.",
+        "message": "Umfasst das Fenster für Neue Nachrichten mit einem farbigen Rahmen, so dass Du die verschiedenen Identitäten unterscheiden kannst."
+    },
+    "__WET_GROUP__OPTIONS": { "message": "Options page" },
+    "heading-color-selector": {
+        "description": "The heading above the list of identities, in the options",
+        "message": "Färbe deine verschiedenen Identitäten ein"
+    },
+    "heading-style-selector": {
+        "description": "The heading above the list of styles, in the options",
+        "message": "Wähle die Art der Markierung"
+    },
+    "heading-size-selector": {
+        "description": "The heading above the list of style sizes, in the options",
+        "message": "Wähle die Größe für den Effekt"
+    },
+    "__WET_GROUP__SIZES": { "message": "Size labels" },
+    "size-small": {
+        "description": "Label for the 'small' size option",
+        "message": "Schmal"
+    },
+    "size-medium": {
+        "description": "Label for the 'medium' size option",
+        "message": "Mittel"
+    },
+    "size-large": {
+        "description": "Label for the 'large' size option",
+        "message": "Breit"
+    },
+    "__WET_GROUP__STYLES": { "message": "Style names" },
+    "style-all-sides": {
+        "description": "A border along all four sides of the composer",
+        "message": "Rahmen auf allen Seiten"
+    },
+    "style-top-and-bottom": {
+        "description": "A border at the top and bottom of the composer",
+        "message": "Rahmen an Ober- und Unterseite"
+    },
+    "style-top": {
+        "description": "A border at the top of the composer",
+        "message": "Rahmen am oberen Rand"
+    },
+    "style-left-side-gradient": {
+        "description": "A gradient on the left side of the composer",
+        "message": "Farbverlauf auf der linken Seite"
+    },
+    "style-background-top-right-gradient": {
+        "description": "A gradient in the top-right corner of the composer",
+        "message": "Farbverlauf in der rechten, oberen Ecke"
+    },
+    "style-background-four-corners-gradient": {
+        "description": "A gradient in each corner of the composer",
+        "message": "Farbverlauf in allen vier Ecken"
+    },
+    "style-background-bottom-gradient": {
+        "description": "A gradient at the bottom of the composer",
+        "message": "Farbverlauf am unteren Rand"
+    },
+    "style-background": {
+        "description": "The color is applied to the whole background of the composer",
+        "message": "Hintergrundfarbe"
+    }
+}
