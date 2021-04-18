@@ -33,7 +33,7 @@
     "__WET_GROUP__STYLES": { "message": "Style names" },
     "style-all-sides": {
         "description": "A border along all four sides of the composer",
-        "message": "All sides"
+        "message": "Border on all sides"
     },
     "style-top-and-bottom": {
         "description": "A border at the top and bottom of the composer",
