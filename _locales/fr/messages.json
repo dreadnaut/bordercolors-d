@@ -1,0 +1,66 @@
+{
+    "__WET_GROUP__INFO": { "message": "Add-on information" },
+    "addonDescription": {
+        "description": "Description of the add-on, as it appears in the Add-ons list.",
+        "message": "Affiche une bordure colorée autour de la fenêtre de nouveau message, pour mieux distinguer les différentes identités."
+    },
+    "__WET_GROUP__OPTIONS": { "message": "Options page" },
+    "heading-color-selector": {
+        "description": "The heading above the list of identities, in the options",
+        "message": "Assignez une couleur à vos identités"
+    },
+    "heading-style-selector": {
+        "description": "The heading above the list of styles, in the options",
+        "message": "Choisissez un style"
+    },
+    "heading-size-selector": {
+        "description": "The heading above the list of style sizes, in the options",
+        "message": "Choisissez la taille de l'effet"
+    },
+    "__WET_GROUP__SIZES": { "message": "Size labels" },
+    "size-small": {
+        "description": "Label for the 'small' size option",
+        "message": "Petit"
+    },
+    "size-medium": {
+        "description": "Label for the 'medium' size option",
+        "message": "Moyen"
+    },
+    "size-large": {
+        "description": "Label for the 'large' size option",
+        "message": "Grand"
+    },
+    "__WET_GROUP__STYLES": { "message": "Style names" },
+    "style-all-sides": {
+        "description": "A border along all four sides of the composer",
+        "message": "Bordure de chaque côté"
+    },
+    "style-top-and-bottom": {
+        "description": "A border at the top and bottom of the composer",
+        "message": "Bordure en haut et en bas"
+    },
+    "style-top": {
+        "description": "A border at the top of the composer",
+        "message": "Bordure en haut"
+    },
+    "style-left-side-gradient": {
+        "description": "A gradient on the left side of the composer",
+        "message": "Dégradé du côté gauche"
+    },
+    "style-background-top-right-gradient": {
+        "description": "A gradient in the top-right corner of the composer",
+        "message": "Dégradé dans le coin en haut à droite"
+    },
+    "style-background-four-corners-gradient": {
+        "description": "A gradient in each corner of the composer",
+        "message": "Dégradé aux quatre coins"
+    },
+    "style-background-bottom-gradient": {
+        "description": "A gradient at the bottom of the composer",
+        "message": "Dégradé en bas"
+    },
+    "style-background": {
+        "description": "The color is applied to the whole background of the composer",
+        "message": "Couleur d'arrière plan"
+    }
+}
