@@ -29,15 +29,5 @@
     "options_ui": {
       "browser_style": true,
       "page": "pages/options.html"
-    },
-    "experiment_apis": {
-		"LegacyPrefs": {
-			"schema": "api/LegacyPrefs/schema.json",
-			"parent": {
-				"scopes": [ "addon_parent" ],
-				"paths": [ [ "LegacyPrefs" ] ],
-				"script": "api/LegacyPrefs/implementation.js"
-			}
-		}
 	}
 }
