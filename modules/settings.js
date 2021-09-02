@@ -55,15 +55,6 @@ export class Settings {
     return '#d3d3da';
   }
 
-  onFirstLoad(callback) {
-    this._get("firstLoadComplete")
-      .then(keys => keys["firstLoadComplete"] || callback());
-  }
-
-  firstLoadComplete() {
-    this._set({ "firstLoadComplete": true });
-  }
-
   onChange(callback) {
     this._extensionPage().addEventListener(ON_CHANGE, callback);
   }
