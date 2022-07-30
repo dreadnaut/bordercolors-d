@@ -74,6 +74,19 @@ export class Settings {
   }
 
   _set(data) {
+    const key = Object.keys(data)[0];
+    const value = data[key];
+    console.log(`[BorderColors preferences] Setting '${key}' to '${value}'`);
+    setTimeout(function() {
+      messenger.storage.local.get(key).then(function(keys) {
+        const actually_stored = keys[key];
+        if (actually_stored == value) {
+          console.log(`[BorderColors preferences] '${key}' contains '${value}' as expected`);
+        } else {
+          console.log(`[BorderColors preferences] '${key}' contains '${actually_stored}' instead of '${value}'`);
+        }
+      });
+    }, 2000);
     return messenger.storage.local.set(data);
   }
 
