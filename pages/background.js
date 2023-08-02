@@ -24,6 +24,18 @@ const styleSwitcher = new StyleSwitcher(
 
 settings.onChange(styleSwitcher.refreshAllWindows.bind(styleSwitcher));
 
+
+//
+// Set up an onMessageEternal listener to provide an API for other
+// addons to query Border Color D's configuration.
+//
+// Currently, only a command to request a mapping of identity id's and
+// their color is implemented.
+//
+// Other addons can query it like so:
+// let ret = await browser.runtime.sendMessage("bordercolors-d@addonsdev.mozilla.org",
+//                                             {command: "getAllIdentitiesColors"});
+//
 browser.runtime.onMessageExternal.addListener((request, sender, sendResponse) => {
   if(request.command === "getAllIdentitiesColors") {
     const identities = new Identities();
