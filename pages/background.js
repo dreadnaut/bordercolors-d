@@ -23,3 +23,35 @@ const styleSwitcher = new StyleSwitcher(
 );
 
 settings.onChange(styleSwitcher.refreshAllWindows.bind(styleSwitcher));
+
+browser.runtime.onMessageExternal.addListener((request, sender, sendResponse) => {
+  if(request.command === "getAllIdentitiesColors") {
+    const identities = new Identities();
+    const settings = new Settings();
+
+    return new Promise((resolve, reject) => {
+      var identitiesIds = [];
+      var identitiesColors = [];
+
+      identities.forEach(identity => {
+        identitiesIds.push(identity.id);
+        identitiesColors.push(settings.getIdentityColor(identity.id));
+      }).then(x => {
+        Promise.all(identitiesColors).then(colors => {
+          let idColorsMap = [];
+          for (const [index, color] of colors.entries()) {
+            let id = identitiesIds[index];
+            idColorsMap[id] = color;
+          }
+
+          resolve({
+            command: "getAllIdentitiesColors",
+            data: idColorsMap
+          });
+        });
+      });
+    });
+
+    return false;
+  }
+});
