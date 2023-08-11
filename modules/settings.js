@@ -19,6 +19,18 @@ export class Settings {
     this._dispatch(ON_CHANGE);
   }
 
+  getColorsFor(identityIds) {
+    const keys = identityIds.map(id => `identity-${id}`);
+    return this._get(keys)
+      .then(colors => this._trimKeys(colors));
+  }
+
+  _trimKeys(identityMap) {
+    return Object.fromEntries(
+      Object.entries(identityMap).map(([k, v]) => [k.slice(9), v])
+    );
+  }
+
   get style() {
     return this._get('highlightStyle')
       .then(keys => keys['highlightStyle'] || this.fallbackStyle);

@@ -10,6 +10,7 @@ import { Identities } from "../modules/identities.js";
 
 console.info("Hello there, I'm BorderColors-D!");
 
+const identities = new Identities();
 const settings = new Settings();
 
 
@@ -31,6 +32,6 @@ settings.onChange(styleSwitcher.refreshAllWindows.bind(styleSwitcher));
 
 // Listen for messages from other extensions
 
-const api = new Api();
+const api = new Api(identities, settings);
 
 messenger.runtime.onMessageExternal.addListener(api.processMessage.bind(api));
