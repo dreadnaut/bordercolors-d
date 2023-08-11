@@ -5,9 +5,13 @@
 export class Identities {
 
   forEach(callback) {
-    return browser.accounts.list()
-      .then(accounts => this._flattenToList(accounts, "identities"))
+    return this.identities
       .then(identities => identities.forEach(callback));
+  }
+
+  get identities() {
+    return browser.accounts.list()
+      .then(accounts => this._flattenToList(accounts, "identities"));
   }
 
   _flattenToList(objects, attribute) {
