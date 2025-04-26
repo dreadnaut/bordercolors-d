@@ -53,3 +53,17 @@ await messenger.runtime.sendMessage(
 ```
 Object { id1: "#fcb1ca", id2: "#f2ccbb", id3: "#0c35dc", id6: "#00ff00", id4: "#ff0000" }
 ```
+
+You can also query one specific identity with `colors.get`:
+
+```js
+await messenger.runtime.sendMessage(
+    'bordercolors-d@addonsdev.mozilla.org',
+    { command: 'colors.get', identity: 'id1' }
+);
+```
+
+```
+"#fcb1ca"
+```
+
