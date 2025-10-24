@@ -1,1 +1,67 @@
+{
+    "__WET_GROUP__INFO": { "message": "Informacje o dodatku" },
+    "addonDescription": {
+        "description": "Description of the add-on, as it appears in the Add-ons list.",
+        "message": "Wyświetla kolorową ramkę wokół okna Tworzenia nowej wiadomości, dzięki czemu można łatwo rozróżnić tożsamości."
+    },
+    "__WET_GROUP__OPTIONS": { "message": "Opcje" },
+    "heading-color-selector": {
+        "description": "The heading above the list of identities, in the options",
+        "message": "Przypisz kolory do swoich tożsamości"
+    },
+    "heading-style-selector": {
+        "description": "The heading above the list of styles, in the options",
+        "message": "Wybierz styl wyróżnienia"
+    },
+    "heading-size-selector": {
+        "description": "The heading above the list of style sizes, in the options",
+        "message": "Wybierz wielkość efektu"
+    },
+    "__WET_GROUP__SIZES": { "message": "Etykiety rozmiaru" },
+    "size-small": {
+        "description": "Label for the 'small' size option",
+        "message": "Mały"
+    },
+    "size-medium": {
+        "description": "Label for the 'medium' size option",
+        "message": "Średni"
+    },
+    "size-large": {
+        "description": "Label for the 'large' size option",
+        "message": "Duży"
+    },
+    "__WET_GROUP__STYLES": { "message": "Nazwy stylów" },
+    "style-all-sides": {
+        "description": "A border along all four sides of the composer",
+        "message": "Obramowanie ze wszystkich stron"
+    },
+    "style-top-and-bottom": {
+        "description": "A border at the top and bottom of the composer",
+        "message": "Obramowanie góra i dół"
+    },
+    "style-top": {
+        "description": "A border at the top of the composer",
+        "message": "Obramowanie u góry"
+    },
+    "style-left-side-gradient": {
+        "description": "A gradient on the left side of the composer",
+        "message": "Gradient z lewej strony"
+    },
+    "style-background-top-right-gradient": {
+        "description": "A gradient in the top-right corner of the composer",
+        "message": "Gradient w prawym górnym rogu"
+    },
+    "style-background-four-corners-gradient": {
+        "description": "A gradient in each corner of the composer",
+        "message": "Gradient w każdym rogu"
+    },
+    "style-background-bottom-gradient": {
+        "description": "A gradient at the bottom of the composer",
+        "message": "Gradient na dole"
+    },
+    "style-background": {
+        "description": "The color is applied to the whole background of the composer",
+        "message": "Kolor tła"
+    }
+}
 
